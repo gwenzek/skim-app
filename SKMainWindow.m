@@ -45,6 +45,37 @@
 
 @synthesize disableConstrainedFrame;
 
+- (id)initWithContentRect:(NSRect)contentRect
+
+                styleMask:(NSUInteger)aStyle
+
+                  backing:(NSBackingStoreType)bufferingType
+
+                    defer:(BOOL)flag {
+
+    
+
+    // Using NSBorderlessWindowMask results in a window without a title bar.
+
+    self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag];
+
+    if (self != nil) {
+
+        // Start with no transparency for all drawing into the window
+
+        [self setAlphaValue:1.0];
+        [self setBackgroundColor:NSColor.clearColor];
+
+        // Turn off opacity so that the parts of the window that are not drawn into are transparent.
+
+        [self setOpaque:NO];
+
+    }
+
+    return self;
+
+}
+
 - (void)sendEvent:(NSEvent *)theEvent {
     if ([theEvent type] == NSLeftMouseDown || [theEvent type] == NSRightMouseDown || [theEvent type] == NSKeyDown) {
         [[SKImageToolTipWindow sharedToolTipWindow] orderOut:nil];

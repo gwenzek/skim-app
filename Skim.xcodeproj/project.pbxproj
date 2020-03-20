@@ -3281,6 +3281,7 @@
 			baseConfigurationReference = CE17EE460E24ED7C00DE06EA /* Skim-App.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 122;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 			};
 			name = Debug;
 		};
@@ -3289,6 +3290,7 @@
 			baseConfigurationReference = CE17EE460E24ED7C00DE06EA /* Skim-App.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 122;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 			};
 			name = Release;
 		};
